@@ -15,7 +15,7 @@ import { useAppContext } from 'src/hooks';
 export function FrontPage(props) {
 
 	const config = useMemo(() => props.config || {}, [props.config]);
-	document.title = `Hypixel Player Stats - ${APP.documentTitle}`;
+	document.title = `BWP Player Stats - ${APP.documentTitle}`;
 
 	// Set the banner according to the config
 	const { setBanner } = useAppContext();
