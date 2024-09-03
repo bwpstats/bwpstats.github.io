@@ -10,11 +10,6 @@ export function Tips() {
 	const tips = [
 		"🚨 Hey! Have you read all these tips yet? 🚨",
 		"Customize this site by clicking on the gear button in the top-right corner.",
-		<React.Fragment>
-			Have a 
-			suggestion? <ExternalLink href={APP.ownerHypixelForumsUrl}>
-				Message me on the Hypixel Forums. </ExternalLink>
-		</React.Fragment>,
 		`Try searching "${APP.suggestedPlayers[2]} guild" or simply "${APP.suggestedPlayers[2]} g" in the search bar!`,
 		<React.Fragment>
 			Interested in how this site was 
@@ -22,16 +17,7 @@ export function Tips() {
 			on GitHub.</ExternalLink>
 		</React.Fragment>,
 		"Clicking on a player's avatar brings you to their profile on NameMC.",
-		"Player names are cached for 30 days to shorten page load times!",
-		<React.Fragment>
-			The "View SkyBlock Stats" button on the player stats page brings you
-			to <ExternalLink href={APP.skyblockUrl}>SkyCrypt</ExternalLink>!
-		</React.Fragment>,
-		"The pink row in a table indicates your most played class/mode!",
-		<React.Fragment>
-			<ExternalLink href={APP.supportUrl}>Supporting this site</ExternalLink> keeps
-			it free to use for thousands of players every day!
-		</React.Fragment>,
+		"The pink row in a table indicates your most played mode!",
 	]
 	const [tipIndex, setTipIndex] = useState(Math.floor(Math.random()*tips.length));
 
