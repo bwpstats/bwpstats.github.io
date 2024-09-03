@@ -17,7 +17,13 @@ export function PlayerCard() {
 	
 	const {guild, mojang, status, voxyl } = useAPIContext();
 	const json = voxyl || {};
-	const networkLevel = json.level + Math.floor((json.exp / 5000) * 100) / 100;
+	const beginningLevels = {
+		1: 2000,
+		2: 3000,
+		3: 4000,
+		4: 5000,
+	}
+	const networkLevel = json.level + Math.floor((json.exp / (json.level % 100 <= 4 ? beginningLevels[json.level % 100] : 5000)) * 100) / 100;
 
 	function getPrestige(level) {
 		level = Math.max(0, level); // Prevent negative levels
@@ -49,6 +55,12 @@ export function PlayerCard() {
 		const exp = level - levelFloor;
 		const proportion = exp;
 		const dataTip = `${Utils.formatNum(exp * 100)}%`;
+		const beginningLevels = {
+			1: 2000,
+			2: 3000,
+			3: 4000,
+			4: 5000,
+		}
 		return (
 			<React.Fragment>
 			<span className={`px-1 c-${getPrestige(Math.floor(networkLevel)).color}`}>
@@ -56,11 +68,11 @@ export function PlayerCard() {
 			</span>
 			<div className="flex-1">
 				<ProgressBar 
-					dataTip={`${Utils.formatNum(json.exp)}/${Utils.formatNum(5000)} XP`}>
+					dataTip={`${Utils.formatNum(json.exp)}/${Utils.formatNum(Math.floor(networkLevel) % 100 <= 4 ? beginningLevels[Math.floor(networkLevel) % 100] : 5000)} XP`}>
 					<Progress 
 						proportion={networkLevel - Math.floor(networkLevel)}
 						color={prestige.color}
-						dataTip={`${Utils.formatNum(json.exp)}/${Utils.formatNum(5000)} XP`} />
+						dataTip={`${Utils.formatNum(json.exp)}/${Utils.formatNum(Math.floor(networkLevel) % 100 <= 4 ? beginningLevels[Math.floor(networkLevel) % 100] : 5000)} XP`} />
 				</ProgressBar>
 			</div>
 			<span className={`px-1 c-${getPrestige(Math.floor(networkLevel) + 1).color}`}>
