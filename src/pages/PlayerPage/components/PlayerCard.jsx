@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, ExternalLink, HorizontalLine, SocialMedia } from 'src/components';
-import { Br, Box, Pair, Title } from 'src/components/Stats';
+import { Br, Box, Pair, Title, Progress, ProgressBar } from 'src/components/Stats';
 import { APP } from 'src/constants/app';
 import { HYPIXEL as consts } from 'src/constants/hypixel';
 import { useAPIContext } from 'src/hooks';
@@ -42,6 +42,32 @@ export function PlayerCard() {
 	}
 
 	const prestige = getPrestige(networkLevel);
+
+	function getProgressBar(level) {
+		const levelFloor = Math.floor(level);
+		const exp = level - levelFloor;
+		const proportion = exp;
+		const dataTip = `${Utils.formatNum(exp * 100)}%`;
+		return (
+			<React.Fragment>
+			<span className={`px-1 c-${getPrestige(Math.floor(networkLevel)).color}`}>
+				{Math.floor(networkLevel)}
+			</span>
+			<div className="flex-1">
+				<ProgressBar 
+					dataTip={`${json.exp}/${5000} XP`}>
+					<Progress 
+						proportion={networkLevel - Math.floor(networkLevel)}
+						color={prestige.color}
+						dataTip={`${Math.floor(networkLevel) + 1}/${5000} XP`} />
+				</ProgressBar>
+			</div>
+			<span className={`px-1 c-${getPrestige(Math.floor(networkLevel) + 1).color}`}>
+				{Math.floor(networkLevel) + 1}
+			</span>
+		</React.Fragment>
+		);
+	}
 	
 	
 	const overallStats = (
@@ -142,6 +168,9 @@ export function PlayerCard() {
 				<Box title="Level" color="white">
 					{prestige.tag}
 				</Box>
+			</div>
+			<div className="h-flex w-100 justify-content-center">
+				{getProgressBar(networkLevel)}
 			</div>
 			<HorizontalLine className="mb-3"/>
 			{overallStats}
