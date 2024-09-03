@@ -1,12 +1,12 @@
 export const BEDWARS = {
 	TITLE: 'Bed Wars',
 	MODES: [
-		{id: 'bedwarsNormalSingle', name: 'Solo'},
-		{id: 'bedwarsNormalDouble', name: 'Doubles'},
-		{id: 'bedwarsRushSolo', name: 'Rush Solo'},
-		{id: 'bedwarsRushDouble', name: 'Rush Doubles'},
-		{id: 'bedwarsLateSingle', name: 'Late Solo'},
-		{id: 'bedwarsLateDouble', name: 'Late Doubles'},
+		{id: 'bedwarsNormalSingle', name: '1v1'},
+		{id: 'bedwarsNormalDouble', name: '2v2'},
+		{id: 'bedwarsRushSolo', name: 'Rush 1v1'},
+		{id: 'bedwarsRushDouble', name: 'Rush 2v2'},
+		{id: 'bedwarsLateSingle', name: 'Late 1v1'},
+		{id: 'bedwarsLateDouble', name: 'Late 2v2'},
 		{id: 'bedwarsMegaSolo', name: 'Mega Solo'},
 		{id: 'bedwarsMegaDouble', name: 'Mega Doubles'},
 		{id: 'miniwarsSolo', name: 'Miniwars Solo'},

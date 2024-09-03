@@ -17,7 +17,7 @@ export function PlayerCard() {
 	
 	const {guild, mojang, status, voxyl } = useAPIContext();
 	const json = voxyl || {};
-	const networkLevel = json.level + Math.round((json.exp / 5000) * 100) / 100;
+	const networkLevel = json.level + Math.floor((json.exp / 5000) * 100) / 100;
 
 	function getPrestige(level) {
 		const levelFloor = Math.floor(level);
@@ -55,11 +55,11 @@ export function PlayerCard() {
 			</span>
 			<div className="flex-1">
 				<ProgressBar 
-					dataTip={`${json.exp}/${5000} XP`}>
+					dataTip={`${Utils.formatNum(json.exp)}/${Utils.formatNum(5000)} XP`}>
 					<Progress 
 						proportion={networkLevel - Math.floor(networkLevel)}
 						color={prestige.color}
-						dataTip={`${Math.floor(networkLevel) + 1}/${5000} XP`} />
+						dataTip={`${Utils.formatNum(json.exp)}/${Utils.formatNum(5000)} XP`} />
 				</ProgressBar>
 			</div>
 			<span className={`px-1 c-${getPrestige(Math.floor(networkLevel) + 1).color}`}>
@@ -89,7 +89,18 @@ export function PlayerCard() {
 			{/* <Pair title={<Link to={`/achievements/${mojang.username}`} className="link">Achievements</Link>}>
 				{'50/62'}
 			</Pair> */}
-			{/* <Br /> */}
+			<Br />
+		</React.Fragment>
+	);
+
+	const loginDates = ( 
+		<React.Fragment>
+			{json.lastLoginTime !== undefined &&
+				<Pair title="Last Login">
+					{Utils.dateFormat(json.lastLoginTime * 1000)}
+				</Pair>
+			}
+			{/* <Br/> */}
 		</React.Fragment>
 	);
 
@@ -174,6 +185,7 @@ export function PlayerCard() {
 			</div>
 			<HorizontalLine className="mb-3"/>
 			{overallStats}
+			{loginDates}
 			{guildInfo()}
 			{/* {statusInfo()} */}
 		</Card>
