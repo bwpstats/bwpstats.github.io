@@ -28,6 +28,8 @@ export function PlayerName(props) {
 			Master : `§6[Master] ${stats.name}`,
 			Mod : `§e[Mod] ${stats.name}`,
 			SrMod : `§e[SrMod] ${stats.name}`,
+			Builder: `§d[Builder] ${stats.name}`,
+			Admin : `§c[Admin] ${stats.name}`,
 			Manager : `§4[Manager] ${stats.name}`,
 			Owner : `§c[Owner] ${stats.name}`,
 			Youtube : `§c[§fYoutube§c] ${stats.name}`,

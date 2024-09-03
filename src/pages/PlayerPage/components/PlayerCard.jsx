@@ -20,6 +20,7 @@ export function PlayerCard() {
 	const networkLevel = json.level + Math.floor((json.exp / 5000) * 100) / 100;
 
 	function getPrestige(level) {
+		level = Math.max(0, level); // Prevent negative levels
 		const levelFloor = Math.floor(level);
 		const prestige = (() => {
 			for (const pres of consts.PRESTIGES.slice().reverse()) {
