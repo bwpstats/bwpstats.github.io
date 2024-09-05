@@ -26,9 +26,9 @@ export function GuildCard() {
 			{hasDesc && 
 				<div className="w-100 mb-3">
 					{reactStringReplace(
-						guild.desc, 
-						// https://stackoverflow.com/a/6041965
-						/(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/g,
+						guild.description,
+						// Simpler and working regex pattern for matching URLs
+						/(https?:\/\/[^\s/$.?#].[^\s]*)/g,
 						(match, i) => <ExternalLink href={match} key={i}>{match}</ExternalLink>
 					)}
 				</div> 
