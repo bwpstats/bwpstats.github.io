@@ -8,7 +8,6 @@ import { useAPIContext } from 'src/hooks';
 import * as Utils from 'src/utils';
 import { calculateNetworkLevel, getPlayerRank, getGuildMemberRank, getGuildMemberDailyGEXP, 
 	getGuildMemberWeeklyGEXP, calculateChallengesCompleted } from 'src/utils/hypixel';
-import { HYPIXEL } from 'src/constants/hypixel';
 
 /**
  * Displays general Hypixel stats about the player in the Hypixel Context
