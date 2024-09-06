@@ -13,7 +13,7 @@ import { HypixelLeveling } from 'src/utils/hypixel';
 export function GuildCard() {
 	const { guild } = useAPIContext();
 	const hasTag = Boolean(guild.tag);
-	const hasDesc = Boolean(guild.description);
+	const hasDesc = Boolean(guild.desc);
 
 
 	return (
@@ -26,7 +26,7 @@ export function GuildCard() {
 			{hasDesc && 
 				<div className="w-100 mb-3">
 					{reactStringReplace(
-						guild.description,
+						guild.desc,
 						// Simpler and working regex pattern for matching URLs
 						/(https?:\/\/[^\s/$.?#].[^\s]*)/g,
 						(match, i) => <ExternalLink href={match} key={i}>{match}</ExternalLink>
