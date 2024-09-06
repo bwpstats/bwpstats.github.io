@@ -112,8 +112,16 @@ export function PlayerCard() {
 					{Utils.dateFormat(json.lastLoginTime * 1000)}
 				</Pair>
 			}
-			{/* <Br/> */}
+			<Br/>
 		</React.Fragment>
+	);
+
+	const hypixelButton = (
+		<ExternalLink href={`${APP.karmaURL}/player/${mojang.uuid}`}>
+			<Button>
+				<span className="font-bold">View Hypixel Stats</span>
+			</Button>
+		</ExternalLink>
 	);
 
 	
@@ -195,9 +203,11 @@ export function PlayerCard() {
 			<div className="h-flex w-100 justify-content-center">
 				{getProgressBar(networkLevel)}
 			</div>
-			<HorizontalLine className="mb-3"/>
+			<Br />
+			{/* <HorizontalLine className="mb-3"/> */}
 			{overallStats}
 			{loginDates}
+			{hypixelButton}
 			{guildInfo()}
 			{/* {statusInfo()} */}
 		</Card>

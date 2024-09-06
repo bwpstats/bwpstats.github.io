@@ -9,6 +9,7 @@ export const APP = {
 	organizationUrl: "https://github.com/Arjun99ab/bwpstats",
 	ownerHypixelForumsUrl: "",
 	ownerUsername: "Awesomeguyy",
+	karmaURL: "https://25karma.xyz",
 	suggestedPlayers: ["CowNecromancer", "CowNecromancer", "CowNecromancer"],
 	supportUrl: "",
 }
