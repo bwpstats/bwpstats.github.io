@@ -24,7 +24,7 @@ export function PlayerName(props) {
 			undefined : `§7${stats.name}`,
 			None : `§7${stats.name}`,
 			Adept: `§2[Adept] ${stats.name}`,
-			Expert : `§9[§lExpert] ${stats.name}`,
+			Expert : `§9[Expert] ${stats.name}`,
 			Master : `§6[Master] ${stats.name}`,
 			Trainee : `§a[Trainee] ${stats.name}`,
 			Mod : `§e[Mod] ${stats.name}`,
