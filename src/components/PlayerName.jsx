@@ -26,6 +26,7 @@ export function PlayerName(props) {
 			Adept: `§2[Adept] ${stats.name}`,
 			Expert : `§9[§lExpert] ${stats.name}`,
 			Master : `§6[Master] ${stats.name}`,
+			Trainee : `§a[Trainee] ${stats.name}`,
 			Mod : `§e[Mod] ${stats.name}`,
 			SrMod : `§e[SrMod] ${stats.name}`,
 			Builder: `§d[Builder] ${stats.name}`,
