@@ -30,6 +30,7 @@ export function PlayerName(props) {
 			Mod : `§e[Mod] ${stats.name}`,
 			SrMod : `§e[SrMod] ${stats.name}`,
 			Builder: `§d[Builder] ${stats.name}`,
+			HeadBuilder: `§5[HeadBuilder] ${stats.name}`,
 			Admin : `§c[Admin] ${stats.name}`,
 			Manager : `§4[Manager] ${stats.name}`,
 			Owner : `§c[Owner] ${stats.name}`,
