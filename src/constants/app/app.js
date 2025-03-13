@@ -6,10 +6,10 @@ export const APP = {
 	documentTitle: "BWP Stats",
 	hypixelStatusUrl: "",
 	namemcUrl: "https://namemc.com/search?q=",
-	organizationUrl: "https://github.com/Arjun99ab/bwpstats",
+	organizationUrl: "https://github.com/bwpstats/bwpstats.github.io",
 	ownerHypixelForumsUrl: "",
 	ownerUsername: "Awesomeguyy",
-	karmaURL: "https://25karma.xyz",
+	karmaURL: "https://bwpstats.github.io",
 	suggestedPlayers: ["CowNecromancer", "CowNecromancer", "CowNecromancer"],
 	supportUrl: "",
 }
